@@ -1,27 +1,22 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import ReactPaginate from "react-paginate"
 import { useRouter } from "next/router"
 import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
+import paginationStyles from './paginate.module.css'
 
 const NewsList = ({ allPostsData }) => {
-    const [users, setUsers] = useState([])
     const router = useRouter()
-    useEffect(() => {
-      if (allPostsData) {
-        
-          setUsers(allPostsData.page)
-      }
-    }, [allPostsData])
+
     // Triggers fetch for new page
-    const handlePagination = page => {
-      const path = router.pathname
-      const query = router.query
-      query.page = page.selected + 1
-    //   router.push({
-    //     pathname: path,
-    //     query: query,
-    //   })
+    const handlePagination = data => {
+        const path = router.pathname
+        const query = router.query
+        query.page = data.selected + 1
+        router.push({
+            pathname: path,
+            query: query,
+        })
     }
     return (
         <>
@@ -44,6 +39,13 @@ const NewsList = ({ allPostsData }) => {
             initialPage={allPostsData.page - 1}
             pageCount={allPostsData.nbPages}
             onPageChange={handlePagination}
+            containerClassName={paginationStyles.paginateWrap}
+            pageClassName={paginationStyles.paginateLi}
+            pageLinkClassName={paginationStyles.paginateA}
+            activeClassName={paginationStyles.paginateActive}
+            nextLinkClassName={paginationStyles.paginateNextA}
+            previousLinkClassName={paginationStyles.paginatePrevA}
+            breakLinkClassName={paginationStyles.paginateBreakA}
           />
         </>
       )
