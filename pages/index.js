@@ -19,9 +19,6 @@ const HomePage = ({ allPostsData }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Here's your news updates</p>
-      </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <NewsList allPostsData={allPostsData} />
       </section>
