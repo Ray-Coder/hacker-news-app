@@ -5,8 +5,15 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
 import NewsList from "../components/NewsList"
+import LineRechartComponent from "../components/line.rechart"
 
 const HomePage = ({ allPostsData }) => {
+  const plot = allPostsData.param.map(data => {
+    return {
+        points: data.points,
+        story: data.story
+    }
+  })
   return (
     <Layout home>
       <Head>
@@ -18,6 +25,8 @@ const HomePage = ({ allPostsData }) => {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <NewsList allPostsData={allPostsData} />
       </section>
+      <LineRechartComponent plot={plot}/>
+
     </Layout>
   )
 }

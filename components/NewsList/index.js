@@ -4,7 +4,6 @@ import { useRouter } from "next/router"
 import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 import paginationStyles from './paginate.module.css'
-import LineRechartComponent from "../line.rechart"
 
 const NewsList = ({ allPostsData }) => {
     const router = useRouter()
@@ -19,12 +18,12 @@ const NewsList = ({ allPostsData }) => {
             query: query,
         })
     }
-    const plot = allPostsData.param.map(data => {
-        return {
-            points: data.points,
-            story: data.story
-        }
-      })
+    // const plot = allPostsData.param.map(data => {
+    //     return {
+    //         points: data.points,
+    //         story: data.story
+    //     }
+    //   })
     return (
         <>
           <ul className={utilStyles.list}>
@@ -54,7 +53,7 @@ const NewsList = ({ allPostsData }) => {
             previousLinkClassName={paginationStyles.paginatePrevA}
             breakLinkClassName={paginationStyles.paginateBreakA}
           />
-           <LineRechartComponent plot={plot}/>
+           
         </>
       )
     }
