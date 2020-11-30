@@ -1,10 +1,10 @@
 import Head from 'next/head'
+import fetch from "node-fetch";
+
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
 import NewsList from "../components/NewsList"
-import fetch from "node-fetch";
-
 
 const HomePage = ({ allPostsData }) => {
   return (
@@ -36,7 +36,9 @@ export const getServerSideProps = async ({ query }) => {
     return {
         id: post.story_id,
         url: post.url,
-        title: post.title
+        title: post.title,
+        points: post.points,
+        story: post.objectID
     }
   })
   allPostsData.param = test

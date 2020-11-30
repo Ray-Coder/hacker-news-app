@@ -12,6 +12,7 @@
     "node-fetch": "^2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-paginate": "^6.5.0"
+    "react-paginate": "^6.5.0",
+    "recharts": "^1.8.5"
   }
 }
