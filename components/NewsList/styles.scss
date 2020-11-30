@@ -1,0 +1,54 @@
+
+
+// Pagination styling
+.paginate-wrap {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  background: #ccc;
+  body.light & {
+    background: #fafafa;
+  }
+  .paginate-a,
+  .paginate-next-a,
+  .paginate-prev-a,
+  .paginateBreak-a {
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    &:focus {
+      outline: 0;
+    }
+    &:hover {
+      background: #745788;
+      background: #d9c5e6;
+    }
+  }
+  .paginate-li {
+    margin: 0 0.2rem;
+  }
+  .paginate-next-a,
+  .paginate-prev-a {
+    color: #745788;
+    margin: 0 0.3rem;
+  }
+  .paginate-active {
+    border: 2px solid #d9c5e6;
+    background: #d9c5e6;
+  }
+  .paginate-disabled > a {
+    cursor: not-allowed;
+    background: transparent;
+    color: #666;
+    body.light & {
+      color: #ccc;
+    }
+    &:hover {
+      background: transparent !important;
+    }
+  }
+}

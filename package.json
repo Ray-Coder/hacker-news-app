@@ -1,0 +1,17 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-paginate": "^6.5.0"
+  }
+}
