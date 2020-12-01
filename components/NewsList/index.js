@@ -18,19 +18,13 @@ const NewsList = ({ allPostsData }) => {
             query: query,
         })
     }
-    // const plot = allPostsData.param.map(data => {
-    //     return {
-    //         points: data.points,
-    //         story: data.story
-    //     }
-    //   })
     return (
         <>
           <ul className={utilStyles.list}>
           {allPostsData.param.map(({ id, url, title }) => (
             <li className={utilStyles.listItem} key={id}>
             <Link href={`${url}`}>
-              <a>{title.replace(/<[^>]+>/g, '')}</a>
+              <a className={utilStyles.aTag}>{title.replace(/<[^>]+>/g, '')}</a>
             </Link>
             
             </li>

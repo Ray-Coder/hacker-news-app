@@ -19,7 +19,8 @@ const HomePage = ({ allPostsData }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <div className={`${utilStyles.headingLg} ${utilStyles.padding4px}`}>Hacker News</div>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding4px}`}>
         <NewsList allPostsData={allPostsData} />
       </section>
       <LineRechartComponent plot={plot}/>

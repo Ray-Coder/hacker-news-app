@@ -15,14 +15,19 @@
   }
   
   .headingLg {
-    font-size: 1.5rem;
     line-height: 1.4;
-    margin: 1rem 0;
+    background: orange;
+    line-height: 1.5;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10pt;
+    color: #222222;
+    font-weight: bold;
   }
   
   .headingMd {
     font-size: 1.2rem;
     line-height: 1.5;
+    background: #f6f6ef;
   }
   
   .borderCircle {
@@ -33,13 +38,11 @@
     color: inherit;
   }
   
-  .padding1px {
-    padding-top: 1px;
+  .padding4px {
+    padding: 4px;
+    line-height: 12pt;
   }
 
-  .padding2px {
-    padding-top: 1px;
-  }
   
   .list {
     list-style: none;
@@ -49,10 +52,16 @@
   
   .listItem {
     margin: 0 0 1.25rem;
-    background: #f6f6ef;
+    
 
   }
   
   .lightText {
     color: #999;
+  }
+
+  .aTag{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10pt;
+    color: black;
   }
