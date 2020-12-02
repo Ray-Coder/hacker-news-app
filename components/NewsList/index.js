@@ -21,8 +21,10 @@ const NewsList = ({ allPostsData }) => {
     return (
         <>
           <ul className={utilStyles.list}>
-          {allPostsData.param.map(({ id, url, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+          {allPostsData.param.map(({ id, url, title }, index) => (
+            <li className={utilStyles.listItem} key={index}>
+            <span className={`${utilStyles.rank} ${utilStyles.padding4px}`}>{index}.</span>
+
             <Link href={`${url}`}>
               <a className={utilStyles.aTag}>{title.replace(/<[^>]+>/g, '')}</a>
             </Link>
