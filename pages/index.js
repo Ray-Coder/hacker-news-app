@@ -19,7 +19,7 @@ const HomePage = ({ allPostsData }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className={`${utilStyles.headingLg} ${utilStyles.padding4px}`}>Hacker News</div>
+      <div aria-label="Hacker News" className={`${utilStyles.headingLg} ${utilStyles.padding4px}`}>Hacker News</div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding4px}`}>
         <NewsList allPostsData={allPostsData} />
       </section>
