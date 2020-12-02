@@ -15,7 +15,7 @@ const HomePage = ({ allPostsData }) => {
     }
   })
   return (
-    <Layout home>
+    <Layout  data-testid="main-component">
       <Head>
         <title>{siteTitle}</title>
       </Head>

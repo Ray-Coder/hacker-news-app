@@ -5,14 +5,36 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest"
   },
   "dependencies": {
+    "@jest/transform": "^26.6.2",
+    "@testing-library/dom": "^7.28.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "chartist": "^0.11.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-transform-css": "^2.1.0",
     "next": "^10.0.0",
     "node-fetch": "^2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-paginate": "^6.5.0",
+    "react-test-renderer": "^17.0.1",
     "recharts": "^1.8.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.12.7",
+    "@testing-library/react": "^11.2.2",
+    "babel-jest": "^26.6.3",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^26.6.3",
+    "jest-dom": "^4.0.0",
+    "react-test-render": "^1.1.2"
   }
 }
