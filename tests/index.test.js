@@ -25,7 +25,7 @@ describe("App", () => {
       <HomePage allPostsData={allPostsData}/>
   );
   expect(element.props.children).toBeTruthy(); 
-  expect(element.props.children.length).toBe(4); 
+  expect(element.props.children.length).toBe(5); 
   });
 });
 

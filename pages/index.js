@@ -34,10 +34,10 @@ const HomePage = ({ allPostsData }) => {
 
 
 export const getServerSideProps = async ({ query }) => {
-  const page = query.page || 1
+  const page = query && query.page || 1
   const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?tags=story&page=${page}`)
   const posts = await res.json();
-
+console.log("whattt", posts)
   const allPostsData = {
     nbPages: posts.nbPages,
     page: posts.page
