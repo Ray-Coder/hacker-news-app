@@ -4,7 +4,9 @@ import fetch from "node-fetch";
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
-import NewsList from "../components/NewsList"
+import PaginationBox from "../components/NewsList/paginate"
+import NewsList from "../components/NewsList/index"
+
 import LineRechartComponent from "../components/line.rechart"
 
 const HomePage = ({ allPostsData }) => {
@@ -23,6 +25,7 @@ const HomePage = ({ allPostsData }) => {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding4px}`}>
         <NewsList allPostsData={allPostsData} />
       </section>
+      <PaginationBox allPostsData={allPostsData} />
       <LineRechartComponent plot={plot}/>
 
     </Layout>
