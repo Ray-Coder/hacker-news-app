@@ -72,3 +72,8 @@
     color: #828282;
     padding : 2px;
   }
+
+  .upvoteBtn{
+    border: none;
+    cursor: pointer;
+  }
