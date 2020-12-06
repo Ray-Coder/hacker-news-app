@@ -1,3 +1,4 @@
+import React, {  useEffect, useState } from "react";
 import Head from 'next/head'
 import fetch from "node-fetch";
 
@@ -9,25 +10,51 @@ import NewsList from "../components/NewsList/index"
 
 import LineRechartComponent from "../components/line.rechart"
 
-const HomePage = ({ allPostsData }) => {
+ const HomePage = ({ allPostsData }) => {
+  const [data,setData]=useState([]);
   const plot = allPostsData.param.map(data => {
     return {
         points: data.points,
         story: data.story
     }
   })
+  const getData=()=>{ // function to switch on and off features from UI
+    fetch('./data.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(myJson) {
+        setData(myJson)
+      });
+  }
+  useEffect(()=>{
+    getData()
+  },[])
+
   return (
     <Layout  data-testid="main-component">
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <div aria-label="Hacker News" className={`${utilStyles.headingLg} ${utilStyles.padding4px}`}>Hacker News</div>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding4px}`}>
+      {data.AppConfigList && data.AppConfigList.loadNews ? 
+        <section className={`${utilStyles.headingMd} ${utilStyles.padding4px}`}>
         <NewsList allPostsData={allPostsData} />
-      </section>
-      <PaginationBox allPostsData={allPostsData} />
-      <LineRechartComponent plot={plot}/>
-
+        </section>
+        : null}
+      {data.AppConfigList && data.AppConfigList.loadPagination ? 
+        <PaginationBox allPostsData={allPostsData} />
+        :null}
+      {data.AppConfigList && data.AppConfigList.loadChart ? 
+        <LineRechartComponent plot={plot}/>
+        :null}
     </Layout>
   )
 }
@@ -37,7 +64,6 @@ export const getServerSideProps = async ({ query }) => {
   const page = query && query.page || 1
   const res = await fetch(`https://hn.algolia.com/api/v1/search_by_date?tags=story&page=${page}`)
   const posts = await res.json();
-console.log("whattt", posts)
   const allPostsData = {
     nbPages: posts.nbPages,
     page: posts.page

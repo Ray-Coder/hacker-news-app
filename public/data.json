@@ -1,0 +1,7 @@
+{
+    "AppConfigList":{
+        "loadNews": true,
+        "loadPagination": true,
+        "loadChart": true
+    }
+}
