@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
-import Upvote from "./upvote"
-
+import Votes from "./votes"
 const NewsList = ({ allPostsData }) => {
     return (
         <>
@@ -15,8 +14,7 @@ const NewsList = ({ allPostsData }) => {
             <Link href={`${url}`}>
               <a aria-label={`${title.replace(/<[^>]+>/g, '')}`} className={utilStyles.aTag}>{title.replace(/<[^>]+>/g, '')}</a>
             </Link>
-            <Upvote></Upvote>
-
+            <Votes />
             </li>
           ))}
           </ul>
