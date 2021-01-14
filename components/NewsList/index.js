@@ -7,7 +7,7 @@ const NewsList = ({ allPostsData }) => {
         <>
           <ul className={utilStyles.list}>
           
-          {allPostsData.param.map(({ id, url, title }, index) => (
+          {allPostsData.param.map(({ url, title }, index) => (
             <li className={utilStyles.listItem} key={index}>
             <span aria-label={`Story ${index+1}`} className={`${utilStyles.rank} ${utilStyles.padding4px}`}>{index+1}.</span>
 

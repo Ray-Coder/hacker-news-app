@@ -40,7 +40,7 @@ import LineRechartComponent from "../components/line.rechart"
   return (
     <div  data-testid="main-component">
       <Head>
-        <title>{siteTitle}</title>
+        <title>HackerNews App</title>
       </Head>
       <div aria-label="Hacker News" className={`${utilStyles.headingLg} ${utilStyles.padding4px}`}>Hacker News</div>
       {data.AppConfigList && data.AppConfigList.loadNews ? 
