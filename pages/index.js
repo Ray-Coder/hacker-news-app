@@ -2,7 +2,6 @@ import React, {  useEffect, useState } from "react";
 import Head from 'next/head'
 import fetch from "node-fetch";
 
-import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 
 import PaginationBox from "../components/NewsList/paginate"
@@ -39,7 +38,7 @@ import LineRechartComponent from "../components/line.rechart"
   },[])
 
   return (
-    <Layout  data-testid="main-component">
+    <div  data-testid="main-component">
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -55,7 +54,7 @@ import LineRechartComponent from "../components/line.rechart"
       {data.AppConfigList && data.AppConfigList.loadChart ? 
         <LineRechartComponent plot={plot}/>
         :null}
-    </Layout>
+    </div>
   )
 }
 
